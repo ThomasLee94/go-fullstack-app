@@ -38,7 +38,6 @@ func DropTestDB() error {
 	return nil
 }
 
-//TODO: err check
 func AutoMigrate(db *gorm.DB) {
 	db.AutoMigrate(
 		&model.Trainer{},

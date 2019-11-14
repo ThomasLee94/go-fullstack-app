@@ -14,9 +14,8 @@ type User struct {
 	Password   string `gorm:"not null"`
 	Bio        *string
 	Image      *string
-	Followers  []Follow  `gorm:"foreignkey:FollowingID"`
-	Followings []Follow  `gorm:"foreignkey:FollowerID"`
-	Favorites  []Article `gorm:"many2many:favorites;"`
+	Followers  []Follow `gorm:"foreignkey:FollowingID"`
+	Followings []Follow `gorm:"foreignkey:FollowerID"`
 }
 
 type Follow struct {
