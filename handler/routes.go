@@ -5,13 +5,12 @@ import (
 )
 
 func (h *Handler) Register(v1 *echo.Group) {
-	trainers.POST("", h.CreateArticle)
-	trainers.GET("/feed", h.Feed)
-	trainers.PUT("/:slug", h.UpdateArticle)
-	trainers.DELETE("/:slug", h.DeleteArticle)
-	pokemon.POST("/:slug/comments", h.AddComment)
-	pokemon.DELETE("/:slug/comments/:id", h.DeleteComment)
-	pokemon.POST("/:slug/favorite", h.Favorite)
-	pokemon.DELETE("/:slug/favorite", h.Unfavorite)
+	trainers.POST("/:trainer", h.CreateTrainer)
+	trainers.GET("/:trainer", h.GetTrainer)
+	trainers.PUT("/:trainer", h.UpdateTrainer)
+	trainers.DELETE("/:trainer", h.DeleteTrainer)
+	pokemon.POST("/:pokemon", h.AddPokemon)
+	pokemon.DELETE("/:pokemon", h.DeletePokemon)
+	pokemon.POST("/:pokemon", h.GetPokemon)
 
 }
