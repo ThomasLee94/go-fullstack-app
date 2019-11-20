@@ -9,7 +9,7 @@ import (
 
 func (h *Handler) GetPokemon(c echo.Context) error {
 	slug := c.Param("slug")
-	a, err := h.itemStore.GetBySlug(slug)
+	a, err := h.pokemonStore.GetBySlug(slug)
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, utils.NewError(err))
 	}
